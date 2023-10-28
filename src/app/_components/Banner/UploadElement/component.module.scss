@@ -1,0 +1,114 @@
+.uploadContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        border-color: rgba(0, 0, 0, 0.2176470588);
+        outline: none;
+        box-shadow: 0 0 0px 5px rgba(0, 0, 0, 0.032);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .boxUpload {
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex: 1 0 0;
+        align-self: stretch;
+        border-radius: 10px;
+        border: 3px dashed rgba(0, 0, 0, 0.05);
+        background: #FAFAFA;
+        cursor: pointer;
+        position: relative;
+
+        .containerList {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+
+            .fileName {
+                span {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        input {
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 38px;
+            max-width: 20rem;
+
+            span {
+                color: #000;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 38px;
+            }
+        }
+    }
+
+
+    .textFile {
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        opacity: 0.6;
+    }
+}
+
+.rowContent {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+    gap: 10px;
+    width: 100%;
+}
+
+.succedMessage{
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    color: green;
+    background-color: rgba(0, 128, 0, 0.1);
+}
+.errorMessage{
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    color: red;
+    background-color: rgba(128, 0, 0, 0.1);
+}

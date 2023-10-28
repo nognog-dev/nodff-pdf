@@ -1,0 +1,68 @@
+.container-flex {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 60px;
+    box-sizing: border-box;
+    max-width: 1440px;
+
+    @media (max-width: 767px) {
+        padding: 20px 30px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span {
+    margin: 0 !important;
+}
+
+.chip {
+    padding: 10px 5px;
+    background-color: rgba(0, 0, 0, 0.014);
+    color: white;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "__Rubik_98e1b5";
+    transition: background-color 0.3s, color 0.3s;
+    background-color: unset;
+    border: unset;
+
+    &:hover {
+        background-color: #222222e6;
+        color: #fff;
+    }
+
+    &:focus {
+        border-color: rgba(0, 0, 0, 0.3176470588);
+        outline: none;
+        box-shadow: 0 0 0px 5px rgba(0, 0, 0, 0.0901960784);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+
+.filled {
+    border: 1px solid lightgrey;
+    background-color: #171717;
+}
+
+.outlined {
+    border: 1px solid #171717;
+    color: #171717;
+
+    &:hover {
+        background-color: #0000000b;
+        color: #171717;
+    }
+}

@@ -1,0 +1,83 @@
+.headerContainer {
+    border-bottom: 1px solid rgba(23, 23, 23, 0.30);
+
+    .headerContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .headerLogoOptions {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+        
+
+            .headerOptionsContent {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                opacity: 0.8;
+
+                .tabOption {
+                    color: #171717;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    transition: 0.3s ease;
+                    position: relative;
+                    padding: 10px 15px;
+                    border-radius: 60px;
+                    width: 120px;
+                    text-align: center;
+                }
+
+                // .tabOption:hover {
+                //     background-color: #0000000e;
+                //     font-weight: 500;
+                // }
+
+                // .tabOption:active {
+                //     background-color: #0000001a;
+                //     font-weight: 600;
+                // }
+
+            }
+        }
+
+        .headerMoreOptionsContent {
+
+            .customSelect {
+                position: relative;
+                display: inline-block;
+            }
+
+            .themeSelect {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .selectIcon {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+
+        }
+    }
+}

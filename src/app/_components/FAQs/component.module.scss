@@ -1,0 +1,35 @@
+.sectionContainer {
+    background: #171717;
+    padding-top: 60px;
+    width: 100%;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+
+    .sectionContent {
+        display: flex;
+        padding: 30px 29px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+     
+
+        h2 {
+            color: #FFF;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .sectionAccordionContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+    }
+}

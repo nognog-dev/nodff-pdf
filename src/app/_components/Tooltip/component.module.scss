@@ -1,0 +1,17 @@
+.tooltipContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  width: 140px;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #131313;
+  color: #fff;
+}
