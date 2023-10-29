@@ -33,9 +33,8 @@ A step by step series of examples that tell you how to get a development environ
 Now, open your browser and navigate to `http://localhost:3000`. You should see the app running.
 
 ## Author
-NOGNOG
 
-You can add additional information about yourself here, such as your background, your areas of interest, or related projects.
+- [NOGNOG](https://linktr.ee/nognog.studio)
 
 ## Support
 If you have any questions or issues, feel free to open an issue in this repository. We'll try to respond and help as quickly as possible.
