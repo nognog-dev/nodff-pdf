@@ -1,5 +1,7 @@
 # NODFF: PDFs Merger Managment
 
+<img  alt="Thumbnail (1)" src="https://github.com/nognog-dev/nodff-pdf/assets/149191240/ccc90e04-52a2-45b3-8de4-869ca00f0886">
+
 ## About
 This is a powerful and user-friendly PDF management tool built with Next.js. It provides users with the ability to mergePDF files with ease. Whether you need to combine multiple documents without losing quality, this tool has got you covered. It’s designed with privacy in mind, ensuring that your files and data are not saved or used beyond the necessary operations. This makes it a reliable and secure solution for all your PDF needs.
 
