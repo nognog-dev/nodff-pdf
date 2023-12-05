@@ -66,3 +66,28 @@ button {
         color: #171717;
     }
 }
+
+.red-button {
+    border: 1px solid #d900001c;
+
+    &:hover {
+        background-color: #d900000f;
+        color: #D90000;
+    }
+
+
+
+    &:focus {
+        border-color: #d900001c;
+        outline: none;
+        box-shadow: 0 0 0px 5px #d900001c;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}

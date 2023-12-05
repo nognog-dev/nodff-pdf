@@ -15,7 +15,8 @@
     "next": "13.4.16",
     "pdf-lib": "^1.17.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "eslint": "^8",
