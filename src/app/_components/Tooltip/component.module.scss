@@ -1,13 +1,13 @@
 .tooltipContainer {
-  position: 1;
+  position: relative;
   display: inline-block;
-  z-index: 9999 ;
+  z-index: 9999;
 }
 
 .tooltip {
   width: 140px;
   position: absolute;
-  top: 200%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 10px;

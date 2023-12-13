@@ -1,9 +1,14 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import Loading from "../../Loading/comoponent";
+
 import { pdfMergeNODFF } from "@/app/_utils/pdfUtils";
+
+import Loading from "../../Loading/comoponent";
+import { PdfOptionsComponent } from "./PdList/component";
+
 import styles from "./component.module.scss";
+import toast, { LoaderIcon } from "react-hot-toast";
 
 const getInitialOrder = files =>
   files.reduce((acc, file, index) => {
@@ -14,6 +19,8 @@ const getInitialOrder = files =>
 export default function UploadComponent() {
   const [pdfFiles, setPdfFiles] = useState([]);
   const [fileOrder, setFileOrder] = useState({});
+  const [isDeletable, setIsDeletable] = useState(false);
+  const [deletableItemId, setDeletableItemId] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleFileChange = useCallback(event => {
@@ -69,11 +76,25 @@ export default function UploadComponent() {
             newOrder[key] -= 1;
           }
         });
+        toast.success("PDF Removed.");
         return newOrder;
       });
     },
     [fileOrder]
   );
+
+  const handleWantToDelete = useCallback(() => {
+    setIsDeletable(!isDeletable);
+  }, [isDeletable]);
+
+  const setIsDeletableForItem = id => {
+    setDeletableItemId(id);
+  };
+
+  const handleCloseDelete = () => {
+    setDeletableItemId(null);
+    setIsDeletable(!isDeletable);
+  };
 
   useEffect(() => {
     const orderedFiles = Object.entries(fileOrder)
@@ -87,9 +108,7 @@ export default function UploadComponent() {
     <>
       <div className={`${styles.uploadContainer}`}>
         <div className={`${styles.boxUpload}`}>
-          {loading ? (
-            <Loading />
-          ) : pdfFiles.length > 0 ? (
+          {pdfFiles.length > 0 ? (
             <div className={styles.containerList}>
               {pdfFiles.map(item => (
                 <div key={item.id} className={styles.fileInfo}>
@@ -102,31 +121,18 @@ export default function UploadComponent() {
                     />
                     <span>{item.file.name}</span>
                   </div>
-                  <div className={styles.pdfOptions}>
-                    <select
-                      value={fileOrder[item.id]}
-                      onChange={e => handleOrderChange(item.id, e.target.value)}
-                      className={`${styles.customSelect}`}
-                    >
-                      {pdfFiles.map((_, idx) => (
-                        <option key={idx} value={idx + 1}>
-                          {idx + 1}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={() => handleDelete(item.id)}
-                      className="outlined icon-button red-button"
-                      style={{ width: "auto" }}
-                    >
-                      <Image
-                        src={"/assets/icons/pdf-delete.svg"}
-                        alt="pdf-view"
-                        width={20}
-                        height={20}
-                      />
-                    </button>
-                  </div>
+                  <PdfOptionsComponent
+                    isLoading={loading}
+                    isDeletable={deletableItemId === item.id}
+                    handleCloseDelete={handleCloseDelete}
+                    handleWantToDelete={handleWantToDelete}
+                    setIsDeletableForItem={setIsDeletableForItem}
+                    handleDelete={handleDelete}
+                    fileOrder={fileOrder}
+                    handleOrderChange={handleOrderChange}
+                    pdfFiles={pdfFiles}
+                    item={item}
+                  />
                 </div>
               ))}
             </div>
@@ -154,13 +160,31 @@ export default function UploadComponent() {
           />
         </div>
       </div>
-      {!loading && pdfFiles.length > 0 && (
+      {pdfFiles.length > 0 && (
         <div className={styles.rowContent}>
-          <button onClick={handleReset} className="outlined">
+          <button onClick={handleReset} className="outlined" disabled={loading}>
             Reset Merge
+            <Image
+              src={"/assets/icons/pdf-resest-black.svg"}
+              alt="reset-icon"
+              width={20}
+              height={20}
+            />
           </button>
-          <button onClick={handleMerge} className="filled">
-            Confirm Merge
+          <button onClick={handleMerge} className="filled" disabled={loading}>
+            {loading ? (
+              <LoaderIcon />
+            ) : (
+              <>
+                Confirm Merge
+                <Image
+                  src={"/assets/icons/pdf-tick-white.svg"}
+                  alt="reset-icon"
+                  width={20}
+                  height={20}
+                />
+              </>
+            )}
           </button>
         </div>
       )}

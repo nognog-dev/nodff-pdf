@@ -3,14 +3,13 @@ import Footer from "./_components/Layout/footer/component";
 import Header from "./_components/Layout/header/component";
 import "./global.scss";
 
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
-import { Rubik } from 'next/font/google'
+import { Rubik } from "next/font/google";
 const rubik = Rubik({
-  subsets: ['latin'],
-  display: 'swap',
-})
- 
+  subsets: ["latin"],
+  display: "swap"
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -19,8 +18,8 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
-      <Toaster />
     </html>
   );
 }

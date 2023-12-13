@@ -21,16 +21,24 @@ export default function Header() {
             height={100}
           />
           <div className={styles.headerOptionsContent}>
-            <Tooltip tooltipText="On maintenance">
-              <Link className={styles.tabOption} href={"/#"}>
-                Documentation
-              </Link>
-            </Tooltip>
-            <Tooltip tooltipText="On maintenance">
-              <Link className={styles.tabOption} href={"/#"}>
-                Support
-              </Link>
-            </Tooltip>
+            <Link
+              className={styles.tabOption}
+              href={
+                "https://nognogs-organization.gitbook.io/nodff-documentation/"
+              }
+              target="_blank"
+            >
+              Documentation
+            </Link>
+            <Link
+              className={styles.tabOption}
+              href={
+                "https://nognogs-organization.gitbook.io/nodff-documentation/privacy-policies-and-terms-and-conditions"
+              }
+              target="_blank"
+            >
+              Support
+            </Link>
           </div>
         </div>
         <div className={styles.headerMoreOptionsContent}>

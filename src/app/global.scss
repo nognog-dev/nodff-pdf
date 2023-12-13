@@ -27,6 +27,10 @@ span {
 }
 
 button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     height: 50px;
     border-radius: 10px;
@@ -67,6 +71,16 @@ button {
     }
 }
 
+.ghost {
+    border: unset;
+    color: #171717;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.0431372549);
+        color: #171717;
+    }
+}
+
 .red-button {
     border: 1px solid #d900001c;
 
@@ -74,8 +88,6 @@ button {
         background-color: #d900000f;
         color: #D90000;
     }
-
-
 
     &:focus {
         border-color: #d900001c;
@@ -90,4 +102,16 @@ button {
     align-items: center;
     justify-content: center;
     padding: 10px;
+}
+
+select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border: unset;
 }
