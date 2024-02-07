@@ -1,12 +1,13 @@
 .tooltipContainer {
   position: relative;
   display: inline-block;
+  z-index: 9999;
 }
 
 .tooltip {
   width: 140px;
   position: absolute;
-  top: 200%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 10px;
@@ -14,4 +15,5 @@
   border-radius: 10px;
   background-color: #131313;
   color: #fff;
+  z-index: 99999;
 }

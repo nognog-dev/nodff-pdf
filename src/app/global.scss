@@ -27,6 +27,10 @@ span {
 }
 
 button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     height: 50px;
     border-radius: 10px;
@@ -64,5 +68,93 @@ button {
     &:hover {
         background-color: #0000000b;
         color: #171717;
+    }
+}
+
+.ghost {
+    border: unset;
+    color: #171717;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.0431372549);
+        color: #171717;
+    }
+}
+
+.text {
+    color: #171717 !important;
+    height: 35px !important;
+    opacity: 0.8;
+
+    &:hover {
+        background-color: #1717170c;
+        color: #171717;
+    }
+}
+
+.red-button {
+    border: 1px solid #d900001c;
+
+    &:hover {
+        background-color: #d900000f;
+        color: #D90000;
+    }
+
+    &:focus {
+        border-color: #d900001c;
+        outline: none;
+        box-shadow: 0 0 0px 5px #d900001c;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border: unset;
+}
+
+.react-pdf__Page__textContent.textLayer,
+.react-pdf__Page__annotations.annotationLayer {
+    display: none;
+}
+
+canvas.react-pdf__Page__canvas {
+    width: 60px !important;
+    height: 80px !important;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+}
+
+.react-pdf__Page.pagePdf {
+    border-radius: 10px;
+}
+
+.full-heig {
+    height: 100% !important;
+}
+
+.selected-opt {
+    background-color: #171717;
+    color: white;
+
+    &:hover {
+        background-color: #171717;
+        color: white;
+
     }
 }
