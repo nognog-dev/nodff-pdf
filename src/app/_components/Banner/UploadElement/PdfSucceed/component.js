@@ -19,6 +19,7 @@ function PDFSucced({ file, beforeSizeFile }) {
 
   return (
     <div className={styles.pdfContainer}>
+      <span className={styles.succedText}>Procces succeded</span>
       <div className={styles.viewContent}>
         <Document file={file.file}>
           <Page pageNumber={1} className={styles.canvasPdfView} />
@@ -30,14 +31,16 @@ function PDFSucced({ file, beforeSizeFile }) {
           </div>
           <div className={styles.rowContent}>
             <p>Size:</p>
-           <div className={styles.sizesFiles}>
-           <span className={beforeSizeFile && styles.newSizeFile}>
-              {formatFileSize(file.size)}
-            </span>
-            {beforeSizeFile != 0 && (
-              <span className={styles.beforeSize}>{formatFileSize(beforeSizeFile)}</span>
-            )}
-           </div>
+            <div className={styles.sizesFiles}>
+              <span className={beforeSizeFile && styles.newSizeFile}>
+                {formatFileSize(file.size)}
+              </span>
+              {beforeSizeFile != 0 && (
+                <span className={styles.beforeSize}>
+                  {formatFileSize(beforeSizeFile)}
+                </span>
+              )}
+            </div>
           </div>
           <div className={styles.rowContent}>
             <p>Format:</p>

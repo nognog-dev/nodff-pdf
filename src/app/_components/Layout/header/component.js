@@ -33,7 +33,7 @@ export default function Header() {
             <Link
               className={styles.tabOption}
               href={
-                "https://nognogs-organization.gitbook.io/nodff-documentation/privacy-policies-and-terms-and-conditions"
+                "https://nognogs-organization.gitbook.io/nodff-documentation/support-project"
               }
               target="_blank"
             >

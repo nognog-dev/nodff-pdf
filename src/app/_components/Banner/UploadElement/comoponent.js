@@ -15,6 +15,7 @@ import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 import PDFSucced from "./PdfSucceed/component";
 import PdfCompressOptions from "./PdfCompressOptions/component";
+import Link from "next/link";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -305,8 +306,25 @@ export default function UploadComponent() {
       )}
 
       <span className={styles.acceptaceText}>
-        By using this platform we assume you accept and understand our Policies
-        and Term and Conditions.
+        By using this platform we assume you accept and understand our{" "}
+        <Link
+          href={
+            "https://nognogs-organization.gitbook.io/nodff-documentation/disclaimer"
+          }
+          target="_blank"
+        >
+          Disclaimer
+        </Link>{" "}
+        and{" "}
+        <Link
+          href={
+            "https://nognogs-organization.gitbook.io/nodff-documentation/privacy-policies-and-terms-and-conditions"
+          }
+          target="_blank"
+        >
+          Policies and Term and Conditions
+        </Link>
+        .
       </span>
     </>
   );

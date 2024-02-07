@@ -56,15 +56,12 @@ export const compressPDF = async (
 ) => {
   let toastId = null;
   try {
-    // Iniciar la carga y mostrar un tooltip de carga
     setLoading(true);
-    toastId = toast.loading("Comprimiendo PDF...");
+    toastId = toast.loading("Compressing PDF...");
 
-    // Crear un objeto FormData y añadir el archivo
     const formData = new FormData();
     formData.append("file", file);
 
-    // Realizar la petición al servidor para comprimir el PDF
     const response = await fetch(
       `https://api-pdf-compress-nognog.koyeb.app/compress/${quality}`,
       {
@@ -73,18 +70,13 @@ export const compressPDF = async (
       }
     );
 
-    // Si la respuesta no es exitosa, lanzar un error
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // Convertir la respuesta en un blob
     const blob = await response.blob();
-
-    // Crear una URL para el blob
     const url = window.URL.createObjectURL(blob);
 
-    // Crear un enlace para descargar el archivo y hacer clic en él
     const link = document.createElement("a");
     link.href = url;
     link.setAttribute("download", "compressed-nodff.pdf");
@@ -92,10 +84,9 @@ export const compressPDF = async (
     link.click();
     document.body.removeChild(link);
 
-    // Detener la carga, ocultar el tooltip de carga y mostrar un tooltip de éxito
     setLoading(false);
     toast.dismiss(toastId);
-    toast.success("¡Compresión de PDF exitosa!");
+    toast.success("PDF compression successful!");
     setPdfFiles([]);
     setDidSucceed(true);
     setFileInfo({
@@ -105,10 +96,9 @@ export const compressPDF = async (
       file: blob
     });
   } catch (error) {
-    // Si hay un error, detener la carga, ocultar el tooltip de carga y mostrar un tooltip de error
     setLoading(false);
     if (toastId) toast.dismiss(toastId);
-    toast.error(`Falló la compresión de PDF: ${error.message}`);
+    toast.error(`Something fail at compressing the PDF: ${error.message}`);
     setDidSucceed(false);
   }
 };
