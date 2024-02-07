@@ -12,7 +12,7 @@ Short descriptions for each feature:
 
 - **Edit PDFs**: We are working on this implementation. // Soon
 
-- **Compress PDFs**: We are working on this implementation. // Soon
+- **Compress PDFs**: This feature allows you to compress a single PDF file.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
