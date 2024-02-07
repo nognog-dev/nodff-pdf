@@ -1,6 +1,12 @@
 .pdfContainer {
   width: 100%;
 
+  .succedText {
+    padding: 10px;
+    color: green;
+    font-weight: 600;
+  }
+
   .viewContent {
     display: flex;
     flex-direction: row;
