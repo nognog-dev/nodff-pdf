@@ -1,0 +1,54 @@
+.pdfContainer {
+  width: 100%;
+
+  .viewContent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 10px;
+
+    .infoPdf {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+
+      .sizesFiles {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        .newSizeFile {
+          color: green;
+          font-weight: 500;
+        }
+
+        .beforeSize {
+          text-decoration: line-through;
+          opacity: 0.6;
+        }
+      }
+
+      .rowContent {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid lightgray;
+      }
+
+      .canvasPdfView {
+        width: auto;
+
+        canvas.react-pdf__Page__canvas {
+          width: 100px !important;
+          height: 125px !important;
+        }
+      }
+    }
+  }
+}

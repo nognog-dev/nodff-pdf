@@ -1,10 +1,12 @@
 .sectionContainer {
     padding-top: 120px;
+    height: 70vh;
 
     @media (max-width: 767px) {
         width: 100%;
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        height: auto;
     }
 
     .sectionContent {
@@ -31,15 +33,24 @@
                 font-style: normal;
                 font-weight: 700;
                 line-height: normal;
+
+                @media (max-width: 767px) {
+                    font-size: 38px;
+                }
             }
 
             h3 {
                 color: #000;
                 font-size: 24px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 400;
                 line-height: 38px;
                 opacity: 0.8;
+                @media (max-width: 767px) {
+                    font-size: 18px;
+                line-height: 32px;
+
+                }
             }
         }
 

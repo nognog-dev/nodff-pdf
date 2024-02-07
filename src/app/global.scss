@@ -81,6 +81,17 @@ button {
     }
 }
 
+.text {
+    color: #171717 !important;
+    height: 35px !important;
+    opacity: 0.8;
+
+    &:hover {
+        background-color: #1717170c;
+        color: #171717;
+    }
+}
+
 .red-button {
     border: 1px solid #d900001c;
 
@@ -114,4 +125,36 @@ button:disabled {
     cursor: not-allowed;
     opacity: 0.7;
     border: unset;
+}
+
+.react-pdf__Page__textContent.textLayer,
+.react-pdf__Page__annotations.annotationLayer {
+    display: none;
+}
+
+canvas.react-pdf__Page__canvas {
+    width: 60px !important;
+    height: 80px !important;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+}
+
+.react-pdf__Page.pagePdf {
+    border-radius: 10px;
+}
+
+.full-heig {
+    height: 100% !important;
+}
+
+.selected-opt {
+    background-color: #171717;
+    color: white;
+
+    &:hover {
+        background-color: #171717;
+        color: white;
+
+    }
 }

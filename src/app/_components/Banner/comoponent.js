@@ -1,16 +1,24 @@
+"use client";
 // MAIN IMPORTS
-import React from "react";
+import { useContext } from "react";
+import { FileContext } from "../../layout";
+import UploadComponent from "./UploadElement/comoponent";
 // STYLES IMPORTED
 import styles from "./component.module.scss";
-import UploadComponent from "./UploadElement/comoponent";
 
 export default function BannerAction() {
+  const { optionSelected, setOptionSelected } = useContext(FileContext);
+
+  const handleSelectChange = event => {
+    setOptionSelected(event.target.value);
+  };
+
   return (
     <section className={`${styles.sectionContainer}`}>
       <div className={`container-flex ${styles.sectionContent}`}>
         <div className={` ${styles.sectionInfo}`}>
           <h1>
-            Merge your PDF’s <u>without</u> limitations.
+            Merge and Compress your PDF’s <u>without</u> limitations.
           </h1>
           <h3>
             Nodff provides you with the opportunity to merge all your PDFs
@@ -22,13 +30,13 @@ export default function BannerAction() {
           <select
             placeholder="Select an action"
             className={`${styles.customSelect}`}
+            onChange={handleSelectChange}
+            value={optionSelected}
           >
-            <option value="option1">Merge</option>
-            <option value="option2" disabled>
+            <option value="merge">Merge PDF</option>
+            <option value="compress">Compress PDF</option>
+            <option value="edit" disabled>
               Edit // Coming
-            </option>
-            <option value="option3" disabled>
-              Compress // Coming
             </option>
           </select>
           <UploadComponent />

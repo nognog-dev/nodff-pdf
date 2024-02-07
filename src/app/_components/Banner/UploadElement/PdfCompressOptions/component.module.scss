@@ -1,0 +1,44 @@
+.pdfInfoCompressContainer {
+
+    .pdfPreview {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .rowContent{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .containerLevelCompress {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+
+        span {
+            font-size: 14px;
+            color: #171717;
+            opacity: 0.8;
+        }
+
+        .infoLevel {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .contentLevelCompress {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+}
