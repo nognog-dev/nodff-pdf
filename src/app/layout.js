@@ -10,6 +10,9 @@ import toast, { Toaster } from "react-hot-toast";
 
 import { Rubik } from "next/font/google";
 import Head from "next/head";
+import { Provider } from "react-redux";
+import store from "./_store/store";
+
 const rubik = Rubik({
   subsets: ["latin"],
   display: "swap"
@@ -50,9 +53,9 @@ export default function RootLayout({ children }) {
           <meta name="url" content="https://nodff-pdf.vercel.app/" />
         </Head>
         <body style={{ margin: "unset" }}>
-          <Header />
-          {children}
-          <Footer />
+          {/* <Header /> */}
+          <Provider store={store}>{children}</Provider>
+          {/* <Footer /> */}
           <Toaster />
         </body>
       </html>
